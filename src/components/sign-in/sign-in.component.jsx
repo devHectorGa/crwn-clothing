@@ -1,52 +1,53 @@
-import React from 'react'
-import './sign-in.styles.scss'
+import React from "react";
+import "./sign-in.styles.scss";
+import FormInput from "../form-input/form-input.component";
 
 class SignIn extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
-      email: '',
-      password: ''
-    }
+      email: "",
+      password: ""
+    };
   }
-  handleSubmit = event =>{
-    event.preventDefault()
-    this.setState({ email:'', password:'' })
-  }
+  handleSubmit = event => {
+    event.preventDefault();
+    this.setState({ email: "", password: "" });
+  };
   handleChange = event => {
-    const { value, name } = event.target
-    this.setState({ [name]: value })
-  }
+    const { value, name } = event.target;
+    this.setState({ [name]: value });
+  };
 
-  render (){
-    return(
-      <div className='sign-in'>
+  render() {
+    return (
+      <div className="sign-in">
         <h2>I already have an account</h2>
         <span>Sign in with your email and password</span>
-        
-        <form onSubmit={this.handleSubmit} >
-          <input 
-            name='email'
-            type='email'
+
+        <form onSubmit={this.handleSubmit}>
+          <FormInput
+            name="email"
+            type="email"
+            label="email"
             value={this.state.email}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             required
           />
-          <label>Email</label>
-          <input
-            name='password'
-            type='password'
+          <FormInput
+            name="password"
+            type="password"
+            label="password"
             value={this.state.email}
-            onChange={this.handleChange}
+            handleChange={this.handleChange}
             required
           />
-          <label>Password</label>
-          <input type='submit' value='Submit Form' />
+          <input type="submit" value="Submit Form" />
         </form>
       </div>
-    )
+    );
   }
 }
 
-export default SignIn
+export default SignIn;
