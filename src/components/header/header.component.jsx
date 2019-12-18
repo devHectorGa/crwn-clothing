@@ -12,7 +12,7 @@ import { createStructuredSelector } from "reselect";
 import { auth } from "../../firebase/firebase.utils";
 import { ReactComponent as Logo } from "../../assets/Logo.svg";
 import CartIcon from "../cart-icon/cart-icon.component";
-import CardDropdown from "../cart-dropdown/cart-dropdown";
+import CardDropdown from "../cart-dropdown/cart-dropdown.component";
 import { selectCartHidden } from "../../redux/cart/cart.selectors";
 import { selectCurrentUser } from "../../redux/user/user.selectors";
 
