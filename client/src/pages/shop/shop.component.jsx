@@ -1,5 +1,4 @@
-import React, { useEffect } from "react";
-import "./shop.styles.scss";
+import React, { useEffect, Fragment } from "react";
 import { connect } from "react-redux";
 import { Route } from "react-router-dom";
 
@@ -14,7 +13,7 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
   }, [fetchCollectionsStart]);
 
   return (
-    <div className="shop-page">
+    <Fragment>
       <Route
         exact
         path={`${match.path}`}
@@ -24,12 +23,12 @@ const ShopPage = ({ fetchCollectionsStart, match }) => {
         path={`${match.path}/:collectionId`}
         component={CollectionPageContainer}
       />
-    </div>
+    </Fragment>
   );
 };
 
-const mapDispatchToProps = dispatch => ({
-  fetchCollectionsStart: () => dispatch(fetchCollectionsStart())
+const mapDispatchToProps = (dispatch) => ({
+  fetchCollectionsStart: () => dispatch(fetchCollectionsStart()),
 });
 
 export default connect(null, mapDispatchToProps)(ShopPage);
