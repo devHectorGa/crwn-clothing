@@ -10,13 +10,13 @@ import shopReducer from "./shop/shop.reducer";
 const persistConfig = {
   key: "root",
   storage,
-  whitelist: ["cart"]
+  // whitelist: ["cart"]
 };
 const rootReducer = combineReducers({
   user: userReducer,
   cart: cartReducer,
   directory: directoryReducer,
-  shop: shopReducer
+  shop: shopReducer,
 });
 
 export default persistReducer(persistConfig, rootReducer);
